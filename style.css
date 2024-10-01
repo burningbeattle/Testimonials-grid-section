@@ -1,0 +1,132 @@
+:root {
+  --purple: hsl(263, 55%, 52%);
+  --gray-blue: hsl(217, 19%, 35%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card--purple {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.card--gray-blue {
+  background-color: var(--gray-blue);
+  color: var(--white);
+}
+
+.card--black {
+  background-color: #19202D;
+  color: var(--white);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.card__name {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.card__verified {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.card__quote {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.card__text {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.7;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .testimonial-grid {
+      display: flex;
+      flex-direction: column;
+      max-width: 375px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .testimonial-grid {
+      max-width: 1110px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: 
+          "daniel daniel jonathan kira"
+          "jeanette patrick patrick kira";
+          gap: 24px;
+  }
+
+  .card--purple {
+      grid-area: daniel;
+      grid-column: span 2;
+  }
+
+  .card--gray-blue {
+      grid-area: jonathan;
+  }
+
+  .card--white-1 {
+      grid-area: jeanette;
+  }
+
+  .card--black {
+      grid-area: patrick;
+      grid-column: span 2;
+  }
+
+  .card--white-2 {
+      grid-area: kira;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 375px;
+  }
+}
+
